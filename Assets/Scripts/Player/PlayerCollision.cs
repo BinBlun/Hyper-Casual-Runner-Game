@@ -17,5 +17,9 @@ public class PlayerCollision : MonoBehaviour
                 Destroy(other.gameObject);
             });
         }
+        if(other.tag == "Gate")
+        {
+            other.GetComponent<Gate>().ExecuteOperation();
+        }
     }
 }
