@@ -21,5 +21,9 @@ public class PlayerCollision : MonoBehaviour
         {
             other.GetComponent<Gate>().ExecuteOperation();
         }
+        if (other.tag == "Obstacle")
+        {
+            other.GetComponent<Block>().CheckHit();
+        }
     }
 }

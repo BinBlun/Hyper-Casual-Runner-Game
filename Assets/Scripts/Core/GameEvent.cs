@@ -7,6 +7,7 @@ public class GameEvent : MonoBehaviour
 {
     private CompositeDisposable subscriptions = new CompositeDisposable();
     public static GameEvent instance { get; private set; }
+    public BoolReactiveProperty gameWon {  get; set;}
     public BoolReactiveProperty gameLost { get; set; } = new BoolReactiveProperty(false);
     public IntReactiveProperty playerSize {  get; set; } = new IntReactiveProperty(1);
 
@@ -26,5 +27,10 @@ public class GameEvent : MonoBehaviour
                 }
             })
             .AddTo(subscriptions);
+    }
+
+    private void OnDisable()
+    {
+        subscriptions.Clear();
     }
 }
