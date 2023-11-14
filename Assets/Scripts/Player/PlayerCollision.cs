@@ -25,5 +25,9 @@ public class PlayerCollision : MonoBehaviour
         {
             other.GetComponent<Block>().CheckHit();
         }
+        if (other.tag == "Finish")
+        {
+            GameEvent.instance.gameWon.SetValueAndForceNotify(true);
+        }
     }
 }
