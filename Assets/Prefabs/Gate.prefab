@@ -61,12 +61,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateOperation: 0
-  value: 10
+  value: 5
   operationText: {fileID: 2531641553604633994}
   forceField: {fileID: 2531641553021380225}
   operationTypeMaterial:
-  - {fileID: 2100000, guid: ec1c4d34f1176b14c86f90dad76d00c0, type: 2}
   - {fileID: 2100000, guid: 9f87c2aaedb61ee4abb1a037b047544e, type: 2}
+  - {fileID: 2100000, guid: ec1c4d34f1176b14c86f90dad76d00c0, type: 2}
 --- !u!1 &2531641553021380231
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,8 +182,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2531641553604633992}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.22}
+  m_LocalScale: {x: 8.695652, y: 6.438256, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2531641553021380230}
@@ -214,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -5609398929656631900, guid: 38442ceb3a065cc42a0ee99ab99f07d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 38442ceb3a065cc42a0ee99ab99f07d2, type: 2}
+  m_sharedMaterial: {fileID: -5609398929656631900, guid: 38442ceb3a065cc42a0ee99ab99f07d2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -283,13 +283,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
-  m_fontSizeBase: 36
+  m_fontSize: 5.5
+  m_fontSizeBase: 5.5
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 4.9415936, y: 0, z: 4.861048, w: 0}
+  m_margin: {x: 9.466981, y: 1.8615923, z: 9.495951, w: 1.6990634}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -382,7 +382,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8a8d0466e2615384f8806714d60e1aaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d8d265045f4f4774eb45d86cc1d3474e, type: 2}
+      objectReference: {fileID: 2100000, guid: 90c0f1c822dfa4f41900fb268df1a1bc, type: 2}
     - target: {fileID: 919132149155446097, guid: 8a8d0466e2615384f8806714d60e1aaa, type: 3}
       propertyPath: m_Name
       value: Gate
