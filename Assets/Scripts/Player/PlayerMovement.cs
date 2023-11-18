@@ -8,15 +8,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private CompositeDisposable subscriptions = new CompositeDisposable();
 
-    [SerializeField] Transform playerTransform;
     [SerializeField] float limitValue;
     [SerializeField] float sidewaySpeed;
+    [SerializeField] Transform playerTransform;
 
-    private bool lockControls;
     private float _finalPos;
     private float _currentPos;
-    // Update is called once per frame
-    void Update()
+    
+    void OnEnable()
     {
         StartCoroutine(Subcribe());
     }
@@ -35,26 +34,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             })
             .AddTo(subscriptions);
-
-        GameEvent.instance.gameWon.ObserveEveryValueChanged(x => x.Value)
-            .Subscribe(value =>
-            {
-                if (value)
-                {
-                    lockControls = true;
-                }
-            })
-            .AddTo(subscriptions);
-
-        GameEvent.instance.gameLost.ObserveEveryValueChanged(x => x.Value)
-            .Subscribe(value =>
-            {
-                if(value)
-                {
-                    lockControls = true;
-                }
-            })
-            .AddTo(subscriptions);
     }
 
     private void OnDisable()
@@ -62,20 +41,18 @@ public class PlayerMovement : MonoBehaviour
         subscriptions.Clear();
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
         if (Input.GetMouseButton(0))
         {
-            float halfScreen = Screen.width / 2;
-            float xPos = (Input.mousePosition.x - halfScreen) / (halfScreen) * 2;
-            xPos = Mathf.Clamp(xPos, -1.0f, 1.0f);
-            _finalPos = xPos * limitValue;
+            float percentageX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width * 0.5f) * 2;
+            percentageX = Mathf.Clamp(percentageX, -1.0f, 1.0f);
+            _finalPos = percentageX * limitValue;
         }
         //Calculate the x position
-
         float delta = _finalPos - _currentPos;
-        _currentPos += delta * Time.deltaTime * sidewaySpeed;
-        _currentPos = Mathf.Clamp(_currentPos,-limitValue, limitValue);
+        _currentPos += (delta * Time.deltaTime * sidewaySpeed);
+        _currentPos = Mathf.Clamp(_currentPos, -limitValue, limitValue);
         playerTransform.localPosition = new Vector3(_currentPos, 0, 0);
     }
 }
