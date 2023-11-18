@@ -43,6 +43,9 @@ public class Block : MonoBehaviour
             completeBlock.SetActive(false);
             brokenBlock.SetActive(true);
             blockSizeText.gameObject.SetActive(false);
+        } else
+        {
+            GameEvent.instance.gameLost.SetValueAndForceNotify(true);
         }
     }
 }

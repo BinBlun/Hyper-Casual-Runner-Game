@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    private Animator playerAnim;
+
+    private void Awake()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +29,7 @@ public class PlayerCollision : MonoBehaviour
         }
         if (other.tag == "Obstacle")
         {
+            
             other.GetComponent<Block>().CheckHit();
         }
         if (other.tag == "Finish")
