@@ -21,7 +21,8 @@ namespace PathCreation.Examples
 
         void Update()
         {
-            if (pathCreator != null)
+            if (pathCreator != null && GameEvent.instance.gameStarted.Value &&
+                !GameEvent.instance.gameWon.Value && !GameEvent.instance.gameLost.Value)
             {
                 distanceTravelled += speed * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
