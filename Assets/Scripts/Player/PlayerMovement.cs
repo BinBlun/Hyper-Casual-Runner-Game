@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             float halfScreen = Screen.width / 2;
-            float xPos = ((Input.mousePosition.x - halfScreen) / halfScreen) * 2;
+            float xPos = (Input.mousePosition.x - halfScreen) / (halfScreen) * 2;
             xPos = Mathf.Clamp(xPos, -1.0f, 1.0f);
             _finalPos = xPos * limitValue;
         }
